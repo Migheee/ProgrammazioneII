@@ -3,40 +3,35 @@ public class Date {
     int month;
     int year;
 
-    // La variabile 'format' è una costante: il modificatore 'final' impedisce che venga modificata dopo l'inizializzazione.
-    // Inoltre, è 'static' perché è condivisa da tutte le istanze della classe: non ha senso avere un formato diverso per ogni oggetto Date.
+    // 'format' è una costante, dichiarata con 'final' per impedirne la modifica dopo l'assegnazione.
+    // È anche 'static' perché non ha senso che ogni oggetto Date abbia una propria copia del formato:
+    // è un'informazione comune a tutte le istanze della classe.
     static final String format = "dd/mm/yyyy";
 
-    // Costruttore: inizializza i campi day, month e year con i valori forniti
-    public Date(int aDay, int aMonth, int aYear) {
-        day = aDay;
-        month = aMonth;
-        year = aYear;
+    // Costruttore della classe: inizializza i campi 'day', 'month' e 'year' con i valori passati.
+    // La parola chiave 'this' serve per distinguere i campi dell'oggetto dalle variabili locali/parametri.
+    public Date(int day, int month, int year) {
+        this.day = day;     // 'this.day' si riferisce al campo dell'oggetto
+        this.month = month;
+        this.year = year;
     }
 
-    // Metodo d'istanza: stampa la data in formato semplice (giorno/mese/anno)
+    // Metodo d'istanza: restituisce la data nel formato "giorno/mese/anno"
+    // Può accedere ai campi 'day', 'month' e 'year' perché è un metodo non statico.
     String print() {
         return day + "/" + month + "/" + year;
     }
 
-    // Metodo statico: restituisce il numero di giorni del mese specificato
-    // Poiché non ha bisogno di accedere ai dati di un oggetto specifico, è dichiarato static
+    // Metodo statico: restituisce il numero di giorni per un dato mese.
+    // Non essendo legato a un'istanza, non può accedere ai campi 'day', 'month' o 'year'.
     static int daysPerMonth(int month) {
-        int days;
         switch (month) {
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                days = 30;
-                break;
+            case 4: case 6: case 9: case 11:
+                return 30;
             case 2:
-                days = 28; // Anno bisestile non gestito in questo esempio
-                break;
+                return 28; // Non considera gli anni bisestili in questo esempio.
             default:
-                days = 31;
-                break;
+                return 31;
         }
-        return days;
     }
 }

@@ -18,3 +18,4 @@ public class Main {
         System.out.println(Date.daysPerMonth(5));  // Chiamata a un metodo statico della classe Date
     }
 }
+
