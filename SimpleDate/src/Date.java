@@ -11,9 +11,10 @@ public class Date {
     // Costruttore della classe: inizializza i campi 'day', 'month' e 'year' con i valori passati.
     // La parola chiave 'this' serve per distinguere i campi dell'oggetto dalle variabili locali/parametri.
     public Date(int day, int month, int year) {
-        this.day = day;     // 'this.day' si riferisce al campo dell'oggetto
+        this.day = day;     // 'this.day' si riferisce al campo dell'oggetto, serve per aevere il puntatore di se stessi
         this.month = month;
         this.year = year;
+	verify();
     }
 
     // Metodo d'istanza: restituisce la data nel formato "giorno/mese/anno"
@@ -34,4 +35,17 @@ public class Date {
                 return 31;
         }
     }
+
+    public String toString(){
+        return day + "/" + month + "/" + year;
+    }
+
+    
+    void verify(){
+        if(day <= 0 || day > daysPerMonth(month))
+	    System.out.println("Illegal  Date!");
+	if(year < 0 || month < 1 || month > 12)
+	    System.out.println("Illegal Date!");	
+    }
 }
+

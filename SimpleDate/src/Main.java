@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     // static: Un metodo statico è legato alla **classe** e non a una specifica **istanza**.
     // Viene utilizzato quando si deve eseguire un'operazione che **non dipende dai dati specifici di un oggetto**.
@@ -22,6 +24,21 @@ public class Main {
         String str = new String("ciao");
         // Alcuni metodi possono essere **sovrascritti** (overriding), definendo quindi un comportamento diverso rispetto a quello di default
         System.out.println(str);
+
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter a Day: ");
+	int day = sc.nextInt();
+
+	System.out.println("Enter a Month: ");
+        int month = sc.nextInt();
+
+	System.out.println("Enter a Year: ");
+        int year = sc.nextInt();
+
+	Date date = new Date(day, month, year);
+	System.out.println(date.toString());
+
+	sc.close();
     }
 }
 
