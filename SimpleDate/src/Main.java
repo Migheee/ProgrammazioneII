@@ -16,6 +16,12 @@ public class Main {
         Date today = new Date(14, 10, 2025);       // Creazione di un'istanza della classe Date
         System.out.println(today.print());         // Chiamata a un metodo d'istanza
         System.out.println(Date.daysPerMonth(5));  // Chiamata a un metodo statico della classe Date
+        // Anche se non lo abbiamo definito, esso già esiste e restituisce:
+        // objType@addr
+        System.out.println(today.toString());
+        String str = new String("ciao");
+        // Alcuni metodi possono essere **sovrascritti** (overriding), definendo quindi un comportamento diverso rispetto a quello di default
+        System.out.println(str);
     }
 }
 
