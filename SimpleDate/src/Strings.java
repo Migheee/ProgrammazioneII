@@ -27,7 +27,7 @@
 //     - == confronta i riferimenti (puntatori)
 //     - equals() confronta il contenuto
 //
-//  Esempio completo:
+// Esempio completo:
 
 public class Strings {
     public static void main(String[] args) {
