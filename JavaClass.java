@@ -22,9 +22,19 @@
 
 public class JavaClass {
 
-    int day;
-    int year;
-    int month;
+    /*INFORMATION HIDING
+     * Restringere l’accesso diretto ai dati e ai dettagli di implementazione di un oggetto dal mondo esterno.
+     * Possiamo ottenere questo combinando l’incapsulamento con gli specifier di accesso (access modifiers).
+     * L’incapsulamento fornisce modularità.
+     * Gli access modifiers limitano l’accesso ai dati.
+     * Alcuni dati possono essere accessibili solo dalle istanze della stessa classe (private),
+     * mentre altri possono essere accessibili anche dall’esterno (public).
+     * Quando i dati non sono private sono public
+     */
+
+    private int day; // Non visibile all mondo esterno; se voglio modificarlo sarà necessario usare met set.
+    private int year;
+    private int month;
 
     // Costruttore principale: inizializza tutti i campi
     // Da un costruttore è possibile chiamare metodi di una classe
@@ -70,6 +80,24 @@ public class JavaClass {
     }
 
     // Se un tipo di ritorno viene scritto, il metodo non è un costruttore
+    
+    // In Java, generalmente non ci si deve preoccupare di deallocazione
+    protected void finalize(){
+        System.out.println("Farewell " + this);
+    }
 
+    /* Non possiamo fare date.day = day, ma date.setDay(day)
+    * Vantaggi:
+    *   - esecuzione di check prima di impostare
+    */
+
+    public void setDay(int day){
+        this.day = day;
+        // Da qui è possibile chiamare altre funzioni che operano su date
+    }
+
+    public int getDay(){
+        return this.day;
+    }
 }
 
