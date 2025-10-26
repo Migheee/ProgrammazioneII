@@ -5,7 +5,8 @@
  *   NORTH, SOUTH, EAST, WEST
  * }
  *
- * In questo caso l'utilizzo di altri tipi primitivi per memorizzare lo stesso contenuto sarebbe molto più complesso (se non impossiible)
+ * In questo caso l'utilizzo di altri tipi primitivi per memorizzare lo stesso contenuto sarebbe 
+ * molto più complesso (se non impossiible)
  *
  * Se si vuole dichiarare una variabile move di tipo Direction, essa può assumere solo uno dei seguenti 4 valori
  *
