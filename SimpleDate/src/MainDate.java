@@ -68,6 +68,17 @@ public class MainDate {
         System.out.println(date.toString());
 
         sc.close();
+
+
+        BirthDay bDay = BirthDay.getInstance();
+        BirthDay bDay1 = BirthDay.getInstance();
+
+        System.out.println("bDay1 == bDay" + (bDay == bDay1)); //true
+                                                               //
+        Date today1 = new Date(27, 10, 2025);
+        Date tomorrow = today1;
+        today.setDay(today1.getDay() + 1);
+        System.out.println("today: "+ tomorrow.toString()); // Come sideeffect abbiamo modificato anche tomorrow
     }
 }
 
